@@ -5,20 +5,23 @@ import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 
 export const Burger = ( {ingredients} ) => {
-    // const ingredientValue = for(const ing in ingredients){
-
-    // }
-    const transformedIngredients = Object.keys(ingredients)
-    .map( (transIngKey) => {
-        return [...Array(ingredients.transIngKey)].map((_,index) => {
+    let transformedIngredients = Object.keys(ingredients).map( (transIngKey) => {
+        return [...Array(ingredients[transIngKey])].map((_,index) => {
             return <BurgerIngredient key={transIngKey + index} type={transIngKey} />
         })
-    });
+    })
+    // .reduce((arr,el) => {
+    //     return arr.concat(el)
+    // },[]);
+    if(transformedIngredients.length === 0){
+        transformedIngredients = <p>Please start adding ingredients</p>;
+    }
+    // console.log(transformedIngredients);
 
     return (
     <div className={classes.Burger}>
         <BurgerIngredient type="bread-top" />
-        {transformedIngredients}
+            {transformedIngredients}
         <BurgerIngredient type="bread-bottom" />
     </div>
     )
