@@ -11,7 +11,7 @@ const controls = [
 ];
 
 
-const BuildControls = ({ingredientAdded ,ingredientRemoved ,disabled,price ,purchaseable}) => {
+const BuildControls = ({ingredientAdded ,ingredientRemoved ,disabled,price ,purchaseable,ordered}) => {
     return (
         <div className={classes.BuildControls}>
             <p>Current Price:<strong>${price}</strong>  </p>
@@ -28,7 +28,7 @@ const BuildControls = ({ingredientAdded ,ingredientRemoved ,disabled,price ,purc
                 })
             }
 
-            <button className={classes.OrderButton} disabled={!purchaseable}>ORDER NOW</button>
+            <button className={classes.OrderButton} disabled={!purchaseable}onClick={ordered} >ORDER NOW</button>
         </div>
     )
 }
