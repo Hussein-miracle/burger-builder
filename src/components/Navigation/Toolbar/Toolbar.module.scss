@@ -15,3 +15,38 @@
 .Toolbar nav{
     height: 100%;
 }
+
+.Logo {
+    height: 80%;
+    margin:  15px 25px 10px;
+}
+
+.Menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+    color: #fff;
+    margin-left: 8px;
+    background-color: #643406;
+    padding: 10px 8px;
+
+    &:hover{
+        background-color: #754406;
+        color: aquamarine;
+    }
+}
+
+
+@media (min-width:500px) {
+    .Menu{
+        display: none;
+    }
+}
+
+@media (max-width:499px) {
+    .DesktopOnly{
+        display: none;
+    }
+}
